@@ -95,3 +95,18 @@ wallpapertimer -d -s "/Wallpaper"
 ```
 
 takes (a) random image/images from either /Wallpaper/\<daytime\>/\<Subfolder\>, e.g. /Wallpaper/night/I
+
+## Automation
+
+You can set up automatically switching the wallpapers after some time by defining a job using http://www.soma-zone.com/LaunchControl/
+
+Just set the job to run to something like 
+
+```
+/usr/local/bin/wallpapertimer -d -s /Volumes/EXTENSION/Wallpapers/
+```
+
+and set a regular start interval, e.g. 900 seconds.
+
+![launchcontrol](https://raw.githubusercontent.com/Lutzifer/Wallpapertimer/master/imgs/launchcontrol.png)
+
