@@ -28,7 +28,6 @@ do {
 	exit(EX_USAGE)
 }
 
-	cli.printUsage()
 if (help.value) {
 	cli.printUsage()
 	exit(EX_USAGE)
