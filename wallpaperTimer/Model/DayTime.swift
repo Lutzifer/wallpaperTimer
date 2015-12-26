@@ -15,7 +15,7 @@ enum DayTime: String {
 }
 
 class DayTimeHelper {
-    func beginningHourOfDayTime(daytime: DayTime) -> Int{
+    func beginningHourOfDayTime(daytime: DayTime) -> Int {
         switch daytime {
         case .morning:
             return 6
