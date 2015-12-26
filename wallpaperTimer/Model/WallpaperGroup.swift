@@ -9,10 +9,10 @@
 import Cocoa
 
 class WallpaperGroup: NSObject {
-	var wallpapers : Array<Wallpaper>
+	var wallpapers: Array<Wallpaper>
 	var groupFolderURL: NSURL
 	
-	init(groupFolderURL : NSURL) {
+	init(groupFolderURL: NSURL) {
 		self.groupFolderURL = groupFolderURL
 		self.wallpapers = Array()
 	}

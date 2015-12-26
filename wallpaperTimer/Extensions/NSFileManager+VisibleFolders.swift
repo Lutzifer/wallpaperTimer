@@ -9,15 +9,15 @@
 import Foundation
 
 extension NSFileManager {
-	func visibleFolderURLsAtURL(url : NSURL) -> Array<NSURL> {
+	func visibleFolderURLsAtURL(url: NSURL) -> Array<NSURL> {
 		let visibleFiles = NSFileManager.defaultManager().visibleFileURLsAtURL(url)
 		
-		let folders = visibleFiles.filter({fileUrl -> Bool in
-				var isDir : ObjCBool = true
+		let folders = visibleFiles.filter { fileUrl -> Bool in
+				var isDir: ObjCBool = true
 				NSFileManager.defaultManager().fileExistsAtPath(fileUrl.path!, isDirectory: &isDir)
 				return isDir.boolValue
-			})
-		
+			}
+        
 		return folders
 	}
 }

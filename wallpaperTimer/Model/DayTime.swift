@@ -8,7 +8,7 @@
 
 import Cocoa
 
-enum DayTime : String {
+enum DayTime: String {
 	case morning, noon, afternoon, evening, night
 	
 	static let allCases = Array(arrayLiteral: DayTime.morning, DayTime.noon, DayTime.afternoon, DayTime.evening, DayTime.night)

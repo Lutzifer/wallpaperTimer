@@ -9,9 +9,9 @@
 import Cocoa
 
 class Wallpaper: NSObject {
-	let url : NSURL
+	let url: NSURL
 	
-	init(url : NSURL) {
+	init(url: NSURL) {
 		self.url = url
 	}
 }

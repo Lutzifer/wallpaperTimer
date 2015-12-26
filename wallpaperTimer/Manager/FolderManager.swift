@@ -11,11 +11,11 @@ import Cocoa
 class FolderManager: NSObject {
 	var baseFolder: NSURL
 	
-	init(baseFolderPath : String) {
+	init(baseFolderPath: String) {
 		self.baseFolder = NSURL(fileURLWithPath: baseFolderPath)
 	}
 	
-	func folderUrlUsingDaytime(useDaytime : Bool) -> NSURL {
+	func folderUrlUsingDaytime(useDaytime: Bool) -> NSURL {
 		if (useDaytime) {
 			return self.baseFolder.URLByAppendingPathComponent(self.folderNameForCurrentTime())
 		} else {
@@ -27,7 +27,7 @@ class FolderManager: NSObject {
 		return DayTimeHelper().currentDayTime().rawValue
 	}
 	
-	func groupsUsingDaytime(useDaytime : Bool) -> Array<WallpaperGroup> {
+	func groupsUsingDaytime(useDaytime: Bool) -> Array<WallpaperGroup> {
 		var groups = Array<WallpaperGroup>()
 		
 		let folderUrls = NSFileManager.defaultManager().visibleFolderURLsAtURL(self.folderUrlUsingDaytime(useDaytime))
