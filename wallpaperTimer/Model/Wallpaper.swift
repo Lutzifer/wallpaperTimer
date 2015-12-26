@@ -6,7 +6,7 @@
 // Copyright © 2015 wlutz. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
 class Wallpaper: NSObject {
 	let url: NSURL

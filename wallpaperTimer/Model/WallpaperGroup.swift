@@ -6,7 +6,7 @@
 // Copyright © 2015 wlutz. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
 class WallpaperGroup: NSObject {
 	var wallpapers: Array<Wallpaper>

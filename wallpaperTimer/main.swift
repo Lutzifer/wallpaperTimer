@@ -6,7 +6,6 @@
 // Copyright © 2015 wlutz. All rights reserved.
 //
 
-import Foundation
 import AppKit
 
 let cli = CommandLine()
