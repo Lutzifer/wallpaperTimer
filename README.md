@@ -1,4 +1,4 @@
-# downloadSorter
+# Wallpapertimer
 A CLI tool that sets all wallpapers of all screens based on groups defined by a certain folder structure. Supports to use groups for certain hours of the day.
 
 ## Installation
