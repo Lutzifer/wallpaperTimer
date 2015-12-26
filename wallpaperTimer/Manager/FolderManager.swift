@@ -24,7 +24,7 @@ class FolderManager {
 	}
 	
 	func folderNameForCurrentTime() -> String {
-		return DayTimeHelper().currentDayTime().rawValue
+		return DayTime.currentDayTime().rawValue
 	}
 	
 	func groupsUsingDaytime(useDaytime: Bool) -> Array<WallpaperGroup> {
