@@ -8,7 +8,7 @@
 
 import Foundation
 
-class WallpaperGroup: NSObject {
+class WallpaperGroup {
 	var wallpapers: Array<Wallpaper>
 	var groupFolderURL: NSURL
 	

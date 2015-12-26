@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Wallpaper: NSObject {
+class Wallpaper {
 	let url: NSURL
 	
 	init(url: NSURL) {

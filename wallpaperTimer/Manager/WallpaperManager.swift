@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class WallpaperManager: NSObject {
+class WallpaperManager {
 	var useDaytime = false
 	var folderManager: FolderManager
 	

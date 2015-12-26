@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class FolderManager: NSObject {
+class FolderManager {
 	var baseFolder: NSURL
 	
 	init(baseFolderPath: String) {
