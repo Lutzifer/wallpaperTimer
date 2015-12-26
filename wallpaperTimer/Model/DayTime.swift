@@ -9,11 +9,7 @@
 import Cocoa
 
 enum DayTime : String {
-	case morning = "morning"
-	case noon = "noon"
-	case afternoon = "afternoon"
-	case evening = "evening"
-	case night = "night"
+	case morning, noon, afternoon, evening, night
 	
 	static let allCases = Array(arrayLiteral: DayTime.morning, DayTime.noon, DayTime.afternoon, DayTime.evening, DayTime.night)
 }
