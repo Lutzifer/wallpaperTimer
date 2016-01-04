@@ -9,22 +9,29 @@
 import Foundation
 
 extension NSFileManager {
-	func visibleFileURLsAtURL(url : NSURL) -> Array<NSURL> {
+	func visibleFileURLsAtURL(url: NSURL) -> Array<NSURL> {
+        var result = Array<NSURL>()
+        
+        guard let path = url.path else {
+            return result
+        }
+        
 		do {
-			var folderResult : Array<String>
+			var folderResult: Array<String>
 			
-			try folderResult = self.contentsOfDirectoryAtPath(url.path!)
+			try folderResult = self.contentsOfDirectoryAtPath(path)
+            
 			// filter dotfiles
-			let cleanFiles : Array<NSURL> = folderResult.filter({filename -> Bool in
+			result = folderResult.filter({ filename -> Bool in
 					return !filename.hasPrefix(".")
-				}).map({(fileName) -> NSURL in
+				}).map({ fileName -> NSURL in
 					url.URLByAppendingPathComponent(fileName)
 				})
 			
-			return cleanFiles
+			return result
 		} catch let err as NSError {
 			print(err)
-			return Array<NSURL>()
+			return result
 		}
 	}
 }

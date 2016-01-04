@@ -8,14 +8,14 @@
 
 import Cocoa
 
-class FolderManager: NSObject {
+class FolderManager {
 	var baseFolder: NSURL
 	
-	init(baseFolderPath : String) {
+	init(baseFolderPath: String) {
 		self.baseFolder = NSURL(fileURLWithPath: baseFolderPath)
 	}
 	
-	func folderUrlUsingDaytime(useDaytime : Bool) -> NSURL {
+	func folderUrlUsingDaytime(useDaytime: Bool) -> NSURL {
 		if (useDaytime) {
 			return self.baseFolder.URLByAppendingPathComponent(self.folderNameForCurrentTime())
 		} else {
@@ -24,17 +24,16 @@ class FolderManager: NSObject {
 	}
 	
 	func folderNameForCurrentTime() -> String {
-		return DayTimeHelper().currentDayTime().rawValue
+		return DayTime.currentDayTime().rawValue
 	}
 	
-	func groupsUsingDaytime(useDaytime : Bool) -> Array<WallpaperGroup> {
+	func groupsUsingDaytime(useDaytime: Bool) -> Array<WallpaperGroup> {
 		var groups = Array<WallpaperGroup>()
 		
 		let folderUrls = NSFileManager.defaultManager().visibleFolderURLsAtURL(self.folderUrlUsingDaytime(useDaytime))
 		
 		for folderUrl in folderUrls {
 			let wallpaperGroup = WallpaperGroup(groupFolderURL: folderUrl)
-			wallpaperGroup.load()
 			groups.append(wallpaperGroup)
 		}
 		

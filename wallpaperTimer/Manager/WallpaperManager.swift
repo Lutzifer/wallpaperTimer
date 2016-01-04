@@ -8,11 +8,11 @@
 
 import Cocoa
 
-class WallpaperManager: NSObject {
+class WallpaperManager {
 	var useDaytime = false
 	var folderManager: FolderManager
 	
-	init(baseFolderPath : String) {
+	init(baseFolderPath: String) {
 		self.folderManager = FolderManager(baseFolderPath: baseFolderPath)
 	}
 	
@@ -28,7 +28,7 @@ class WallpaperManager: NSObject {
 		if let screens = NSScreen.screens() {
 			let groups = self.folderManager.groupsUsingDaytime(self.useDaytime)
 			
-			let eligibleGroups = groups.filter({(group) -> Bool in
+			let eligibleGroups = groups.filter({ group -> Bool in
 					return group.numberOfWallpapers() >= screens.count
 				})
 			
@@ -39,7 +39,7 @@ class WallpaperManager: NSObject {
 		}
 	}
 	
-	func setWallpapers(wallpaperGroup : WallpaperGroup, screens: Array<NSScreen>) {
+	func setWallpapers(wallpaperGroup: WallpaperGroup, screens: Array<NSScreen>) {
 		var wallpapers = wallpaperGroup.wallpapers
 		
 		for screen in screens {

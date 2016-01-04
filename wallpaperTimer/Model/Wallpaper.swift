@@ -6,12 +6,12 @@
 // Copyright © 2015 wlutz. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
-class Wallpaper: NSObject {
-	let url : NSURL
+class Wallpaper {
+	let url: NSURL
 	
-	init(url : NSURL) {
+	init(url: NSURL) {
 		self.url = url
 	}
 }

@@ -6,13 +6,12 @@
 // Copyright © 2015 wlutz. All rights reserved.
 //
 
-import Foundation
 import AppKit
 
 let cli = CommandLine()
 
 let sourcePath = StringOption(shortFlag: "s", longFlag: "sourcepath",
-	helpMessage: "Path to the Folder which contains the Folders '\(DayTimeHelper().allCaseStringsWithBeginning().joinWithSeparator(", ")) and 'all' (used if other folder is empty or -d flag not given).")
+	helpMessage: "Path to the Folder which contains the Folders '\(DayTime.allCaseStringsWithBeginning().joinWithSeparator(", ")) and 'all' (used if other folder is empty or -d flag not given).")
 let help = BoolOption(shortFlag: "h", longFlag: "help",
 	helpMessage: "Prints a help message.")
 let useDaytime = BoolOption(shortFlag: "d", longFlag: "daytime",

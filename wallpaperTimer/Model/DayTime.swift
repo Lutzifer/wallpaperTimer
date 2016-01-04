@@ -6,66 +6,58 @@
 // Copyright © 2015 wlutz. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
-enum DayTime : String {
-	case morning = "morning"
-	case noon = "noon"
-	case afternoon = "afternoon"
-	case evening = "evening"
-	case night = "night"
+enum DayTime: String {
+	case Morining, Noon, Afternoon, Evening, Night
 	
-	static let allCases = Array(arrayLiteral: DayTime.morning, DayTime.noon, DayTime.afternoon, DayTime.evening, DayTime.night)
-}
-
-class DayTimeHelper {
-    func beginningHourOfDayTime(daytime: DayTime) -> Int{
-        switch daytime {
-        case .morning:
+    init(hour: Int) {
+        if hour >= Night.beginningHour {
+            self = Night
+        } else if hour >= Evening.beginningHour {
+            self = Evening
+        } else if hour >= Afternoon.beginningHour {
+            self = Afternoon
+        } else if hour >= Noon.beginningHour {
+            self = Noon
+        } else if hour >= Morining.beginningHour {
+            self = Morining
+        } else {
+            self = Night
+        }
+    }
+    
+    var beginningHour: Int {
+        switch self {
+        case .Morining:
             return 6
-        case .noon:
+        case .Noon:
             return 11
-        case .afternoon:
+        case .Afternoon:
             return 13
-        case .evening:
+        case .Evening:
             return 17
-        case .night:
+        case .Night:
             return 22
         }
     }
     
-	func currentDayTime() -> DayTime {
-		let hour = NSCalendar.currentCalendar().component(NSCalendarUnit.Hour, fromDate: NSDate())
-		return daytimeWithHour(hour)
-	}
-	
-	func daytimeWithHour(hour: Int) -> DayTime {
-		if (hour <= self.beginningHourOfDayTime(.morning) || hour > self.beginningHourOfDayTime(.night)) {
-			return DayTime.night
-		} else if (hour <= self.beginningHourOfDayTime(.noon)) {
-			return DayTime.morning
-		} else if (hour <= self.beginningHourOfDayTime(.afternoon)) {
-			return DayTime.noon
-		} else if (hour <= self.beginningHourOfDayTime(.evening)) {
-			return DayTime.afternoon
-		} else if (hour <= self.beginningHourOfDayTime(.night)) {
-			return DayTime.night
-		} else {
-			return DayTime.night
-		}
-	}
-	
-	func allCaseStrings() -> Array<String> {
-		return DayTime.allCases.map({(dayTime) -> String in
-				dayTime.rawValue
-			})
-	}
-
-    func allCaseStringsWithBeginning() -> Array<String> {
+    static func currentDayTime() -> DayTime {
+        let hour = NSCalendar.currentCalendar().component(NSCalendarUnit.Hour, fromDate: NSDate())
+        return DayTime(hour: hour)
+    }
+    
+    static func allCaseStrings() -> Array<String> {
         return DayTime.allCases.map({(dayTime) -> String in
-            "'\(dayTime.rawValue)' (begins at \(self.beginningHourOfDayTime(dayTime)) ó clock)"
+            dayTime.rawValue
         })
     }
-
+    
+    static func allCaseStringsWithBeginning() -> Array<String> {
+        return DayTime.allCases.map({(dayTime) -> String in
+            "'\(dayTime.rawValue)' (begins at \(dayTime.beginningHour) ó clock)"
+        })
+    }
+    
+	static let allCases = Array(arrayLiteral: DayTime.Morining, DayTime.Noon, DayTime.Afternoon, DayTime.Evening, DayTime.Night)
 }
-

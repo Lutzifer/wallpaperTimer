@@ -6,23 +6,25 @@
 // Copyright © 2015 wlutz. All rights reserved.
 //
 
-import Cocoa
+import Foundation
 
-class WallpaperGroup: NSObject {
-	var wallpapers : Array<Wallpaper>
+class WallpaperGroup {
+    
+    lazy var wallpapers: Array<Wallpaper> = {
+        let wallpapers = Array<Wallpaper>()
+        
+        for file in NSFileManager.defaultManager().visibleFileURLsAtURL(self.groupFolderURL) {
+            self.wallpapers.append(Wallpaper(url: file))
+        }
+        
+        return wallpapers
+    }()
+    
 	var groupFolderURL: NSURL
 	
-	init(groupFolderURL : NSURL) {
+	init(groupFolderURL: NSURL) {
 		self.groupFolderURL = groupFolderURL
 		self.wallpapers = Array()
-	}
-	
-	func load() {
-		self.wallpapers = Array()
-		
-		for file in NSFileManager.defaultManager().visibleFileURLsAtURL(self.groupFolderURL) {
-			self.wallpapers.append(Wallpaper(url: file))
-		}
 	}
 	
 	func numberOfWallpapers() -> Int {
