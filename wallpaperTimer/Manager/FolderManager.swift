@@ -34,6 +34,7 @@ class FolderManager {
 		
 		for folderUrl in folderUrls {
 			let wallpaperGroup = WallpaperGroup(groupFolderURL: folderUrl)
+			wallpaperGroup.load()
 			groups.append(wallpaperGroup)
 		}
 		
