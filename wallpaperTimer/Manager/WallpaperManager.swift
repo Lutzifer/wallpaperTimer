@@ -43,6 +43,7 @@ class WallpaperManager {
 		var wallpapers = wallpaperGroup.wallpapers
 		
 		for screen in screens {
+            
 			let index = randomWithMax(wallpapers.count)
 			setImageAtUrl(wallpapers[index].url, screen: screen)
 			wallpapers.removeAtIndex(index)
