@@ -12,6 +12,6 @@ struct WallpaperGroup {
   let groupFolderURL: URL
 
   var wallpapers: [Wallpaper] {
-    return FileManager.default.visibleFileURLsAtURL(groupFolderURL).map { Wallpaper(url: $0) }
+    return FileManager.default.visibleFileURLs(at: groupFolderURL).map { Wallpaper(url: $0) }
   }
 }

@@ -17,8 +17,8 @@
 		84A14A091C2DA013004E9D87 /* FolderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A14A081C2DA013004E9D87 /* FolderManager.swift */; };
 		84AF94661C2DA2EA00BE2F73 /* WallpaperGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */; };
 		84AF94681C2DA31400BE2F73 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94671C2DA31400BE2F73 /* Wallpaper.swift */; };
-		84AF946A1C2DA3F100BE2F73 /* NSFilemanager+VisibleFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94691C2DA3F100BE2F73 /* NSFilemanager+VisibleFiles.swift */; };
-		84AF946C1C2DA40B00BE2F73 /* NSFileManager+VisibleFolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF946B1C2DA40B00BE2F73 /* NSFileManager+VisibleFolders.swift */; };
+		84AF946A1C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */; };
+		84AF946C1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF946B1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,8 +46,8 @@
 		84A14A081C2DA013004E9D87 /* FolderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderManager.swift; sourceTree = "<group>"; };
 		84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperGroup.swift; sourceTree = "<group>"; };
 		84AF94671C2DA31400BE2F73 /* Wallpaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
-		84AF94691C2DA3F100BE2F73 /* NSFilemanager+VisibleFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFilemanager+VisibleFiles.swift"; sourceTree = "<group>"; };
-		84AF946B1C2DA40B00BE2F73 /* NSFileManager+VisibleFolders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSFileManager+VisibleFolders.swift"; sourceTree = "<group>"; };
+		84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Filemanager+VisibleFiles.swift"; sourceTree = "<group>"; };
+		84AF946B1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+VisibleFolders.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +115,8 @@
 		847D27D91C2DC1470086EB81 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				84AF946B1C2DA40B00BE2F73 /* NSFileManager+VisibleFolders.swift */,
-				84AF94691C2DA3F100BE2F73 /* NSFilemanager+VisibleFiles.swift */,
+				84AF946B1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift */,
+				84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,10 +222,10 @@
 				8467B8EA1BFE6C6D00861561 /* main.swift in Sources */,
 				84AF94681C2DA31400BE2F73 /* Wallpaper.swift in Sources */,
 				847E35BE1F2DE19400A1FE45 /* StringExtensions.swift in Sources */,
-				84AF946C1C2DA40B00BE2F73 /* NSFileManager+VisibleFolders.swift in Sources */,
+				84AF946C1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift in Sources */,
 				847E35C11F2DE43800A1FE45 /* EnumCollection.swift in Sources */,
 				847E35BC1F2DE19400A1FE45 /* CommandLine.swift in Sources */,
-				84AF946A1C2DA3F100BE2F73 /* NSFilemanager+VisibleFiles.swift in Sources */,
+				84AF946A1C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift in Sources */,
 				84A14A071C2D9F02004E9D87 /* DayTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
