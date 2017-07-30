@@ -8,10 +8,6 @@
 
 import Foundation
 
-class Wallpaper {
+struct Wallpaper {
   let url: URL
-
-  init(url: URL) {
-    self.url = url
-  }
 }
