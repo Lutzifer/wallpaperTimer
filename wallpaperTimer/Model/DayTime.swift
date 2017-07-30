@@ -46,8 +46,4 @@ enum DayTime: String, EnumCollection {
     let hour = (Calendar.current as NSCalendar).component(NSCalendar.Unit.hour, from: Date())
     return DayTime(hour: hour)
   }
-
-  static var allCaseStringsWithBeginning: [String] {
-    return allValues.map { "'\($0.rawValue)' (begins at \($0.beginningHour) ó clock)" }
-  }
 }
