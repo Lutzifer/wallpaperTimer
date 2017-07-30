@@ -21,6 +21,26 @@ struct WallpaperManager {
 
     var wallpaperURLsToSet = eligibleGroups[Int.random(withMaximum: eligibleGroups.count)].wallpaperURLs
 
+    if screens.count == 1, let screen = screens.first {
+      let cachePath = FileManager.cachesDir().appending("/WallpaperTimer")
+      try? _ = FileManager.default.createDirectory(
+        atPath: cachePath,
+        withIntermediateDirectories: true,
+        attributes: nil
+      )
+
+      let collagePath = cachePath.appending("/\(UUID().uuidString).jpg")
+
+      Collage(screenSize: screen.visibleFrame.size)
+        .writeImages(
+          at: wallpaperURLsToSet.map { $0.path },
+          to: collagePath
+        )
+
+      screen.setDesktopImage(at: URL(fileURLWithPath: collagePath))
+      return
+    }
+
     screens.forEach {
       let index = Int.random(withMaximum: wallpaperURLsToSet.count)
       $0.setDesktopImage(at: wallpaperURLsToSet[index])

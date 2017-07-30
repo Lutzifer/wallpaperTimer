@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		8416BD261C2D7E9900DB04F6 /* WallpaperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416BD251C2D7E9900DB04F6 /* WallpaperManager.swift */; };
+		8430A1BE1F2E087A00C695B8 /* Collage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8430A1BD1F2E087A00C695B8 /* Collage.swift */; };
+		8430A1C61F2E091600C695B8 /* CollageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8430A1C51F2E091600C695B8 /* CollageTest.swift */; };
+		8430A1CB1F2E093500C695B8 /* Collage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8430A1BD1F2E087A00C695B8 /* Collage.swift */; };
+		8430A1CC1F2E2F5A00C695B8 /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC7401F2E0028000539D9 /* EnumCollection.swift */; };
+		8430A1CE1F2E325B00C695B8 /* CollagePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8430A1CD1F2E325B00C695B8 /* CollagePosition.swift */; };
+		8430A1CF1F2E326500C695B8 /* CollagePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8430A1CD1F2E325B00C695B8 /* CollagePosition.swift */; };
+		8430A1D01F2E35AA00C695B8 /* Int+RandomWithMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35C41F2DF71600A1FE45 /* Int+RandomWithMax.swift */; };
 		8467B8EA1BFE6C6D00861561 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467B8E91BFE6C6D00861561 /* main.swift */; };
 		847E35C31F2DF65000A1FE45 /* NSScreen+SetWallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35C21F2DF65000A1FE45 /* NSScreen+SetWallpaper.swift */; };
 		847E35C51F2DF71600A1FE45 /* Int+RandomWithMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35C41F2DF71600A1FE45 /* Int+RandomWithMax.swift */; };
@@ -15,6 +22,7 @@
 		84AF94661C2DA2EA00BE2F73 /* WallpaperGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */; };
 		84AF946A1C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */; };
 		84AF946C1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF946B1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift */; };
+		84DFACCE1F2E3D46000567C9 /* FileManager+Caches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DFACCD1F2E3D46000567C9 /* FileManager+Caches.swift */; };
 		84EAC7411F2E0028000539D9 /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC7401F2E0028000539D9 /* EnumCollection.swift */; };
 		84EAC74A1F2E0044000539D9 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC7441F2E0033000539D9 /* CommandLine.swift */; };
 		84EAC74B1F2E0044000539D9 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EAC7471F2E0033000539D9 /* Option.swift */; };
@@ -35,6 +43,11 @@
 
 /* Begin PBXFileReference section */
 		8416BD251C2D7E9900DB04F6 /* WallpaperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperManager.swift; sourceTree = "<group>"; };
+		8430A1BD1F2E087A00C695B8 /* Collage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collage.swift; sourceTree = "<group>"; };
+		8430A1C31F2E091600C695B8 /* CollageTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollageTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8430A1C51F2E091600C695B8 /* CollageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollageTest.swift; sourceTree = "<group>"; };
+		8430A1C71F2E091600C695B8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8430A1CD1F2E325B00C695B8 /* CollagePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollagePosition.swift; sourceTree = "<group>"; };
 		8467B8E61BFE6C6D00861561 /* wallpaperTimer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = wallpaperTimer; sourceTree = BUILT_PRODUCTS_DIR; };
 		8467B8E91BFE6C6D00861561 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		847E35B71F2DE0A400A1FE45 /* BuildScripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = BuildScripts; sourceTree = SOURCE_ROOT; };
@@ -44,6 +57,7 @@
 		84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperGroup.swift; sourceTree = "<group>"; };
 		84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Filemanager+VisibleFiles.swift"; sourceTree = "<group>"; };
 		84AF946B1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+VisibleFolders.swift"; sourceTree = "<group>"; };
+		84DFACCD1F2E3D46000567C9 /* FileManager+Caches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Caches.swift"; sourceTree = "<group>"; };
 		84EAC7401F2E0028000539D9 /* EnumCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		84EAC7441F2E0033000539D9 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		84EAC7471F2E0033000539D9 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
@@ -51,6 +65,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		8430A1C01F2E091600C695B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8467B8E31BFE6C6D00861561 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,9 +82,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8430A1C41F2E091600C695B8 /* CollageTest */ = {
+			isa = PBXGroup;
+			children = (
+				8430A1C51F2E091600C695B8 /* CollageTest.swift */,
+				8430A1C71F2E091600C695B8 /* Info.plist */,
+			);
+			path = CollageTest;
+			sourceTree = "<group>";
+		};
 		8467B8DD1BFE6C6D00861561 = {
 			isa = PBXGroup;
 			children = (
+				8430A1C41F2E091600C695B8 /* CollageTest */,
 				8467B8E71BFE6C6D00861561 /* Products */,
 				84EAC7421F2E0033000539D9 /* Dependencies */,
 				8467B8E81BFE6C6D00861561 /* wallpaperTimer */,
@@ -76,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				8467B8E61BFE6C6D00861561 /* wallpaperTimer */,
+				8430A1C31F2E091600C695B8 /* CollageTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				8416BD251C2D7E9900DB04F6 /* WallpaperManager.swift */,
+				8430A1BD1F2E087A00C695B8 /* Collage.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -105,6 +138,7 @@
 			children = (
 				84A14A061C2D9F02004E9D87 /* DayTime.swift */,
 				84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */,
+				8430A1CD1F2E325B00C695B8 /* CollagePosition.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -117,6 +151,7 @@
 				84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */,
 				847E35C21F2DF65000A1FE45 /* NSScreen+SetWallpaper.swift */,
 				847E35C41F2DF71600A1FE45 /* Int+RandomWithMax.swift */,
+				84DFACCD1F2E3D46000567C9 /* FileManager+Caches.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -142,6 +177,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		8430A1C21F2E091600C695B8 /* CollageTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8430A1C81F2E091600C695B8 /* Build configuration list for PBXNativeTarget "CollageTest" */;
+			buildPhases = (
+				8430A1BF1F2E091600C695B8 /* Sources */,
+				8430A1C01F2E091600C695B8 /* Frameworks */,
+				8430A1C11F2E091600C695B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CollageTest;
+			productName = CollageTest;
+			productReference = 8430A1C31F2E091600C695B8 /* CollageTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		8467B8E51BFE6C6D00861561 /* wallpaperTimer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8467B8ED1BFE6C6D00861561 /* Build configuration list for PBXNativeTarget "wallpaperTimer" */;
@@ -166,10 +218,13 @@
 		8467B8DE1BFE6C6D00861561 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = wlutz;
 				TargetAttributes = {
+					8430A1C21F2E091600C695B8 = {
+						CreatedOnToolsVersion = 9.0;
+					};
 					8467B8E51BFE6C6D00861561 = {
 						CreatedOnToolsVersion = 7.1.1;
 						LastSwiftMigration = 0900;
@@ -189,9 +244,20 @@
 			projectRoot = "";
 			targets = (
 				8467B8E51BFE6C6D00861561 /* wallpaperTimer */,
+				8430A1C21F2E091600C695B8 /* CollageTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8430A1C11F2E091600C695B8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		847E35B81F2DE11000A1FE45 /* PreCompile */ = {
@@ -211,20 +277,35 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		8430A1BF1F2E091600C695B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8430A1CF1F2E326500C695B8 /* CollagePosition.swift in Sources */,
+				8430A1C61F2E091600C695B8 /* CollageTest.swift in Sources */,
+				8430A1D01F2E35AA00C695B8 /* Int+RandomWithMax.swift in Sources */,
+				8430A1CB1F2E093500C695B8 /* Collage.swift in Sources */,
+				8430A1CC1F2E2F5A00C695B8 /* EnumCollection.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8467B8E21BFE6C6D00861561 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8430A1CE1F2E325B00C695B8 /* CollagePosition.swift in Sources */,
 				84EAC74C1F2E0044000539D9 /* StringExtensions.swift in Sources */,
 				8416BD261C2D7E9900DB04F6 /* WallpaperManager.swift in Sources */,
 				84AF94661C2DA2EA00BE2F73 /* WallpaperGroup.swift in Sources */,
 				8467B8EA1BFE6C6D00861561 /* main.swift in Sources */,
 				84EAC74B1F2E0044000539D9 /* Option.swift in Sources */,
+				8430A1BE1F2E087A00C695B8 /* Collage.swift in Sources */,
 				847E35C31F2DF65000A1FE45 /* NSScreen+SetWallpaper.swift in Sources */,
 				84AF946C1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift in Sources */,
 				84EAC74A1F2E0044000539D9 /* CommandLine.swift in Sources */,
 				84EAC7411F2E0028000539D9 /* EnumCollection.swift in Sources */,
 				84AF946A1C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift in Sources */,
+				84DFACCE1F2E3D46000567C9 /* FileManager+Caches.swift in Sources */,
 				847E35C51F2DF71600A1FE45 /* Int+RandomWithMax.swift in Sources */,
 				84A14A071C2D9F02004E9D87 /* DayTime.swift in Sources */,
 			);
@@ -233,6 +314,45 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		8430A1C91F2E091600C695B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CollageTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = de.w10z.CollageTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		8430A1CA1F2E091600C695B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = CollageTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = de.w10z.CollageTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
 		8467B8EB1BFE6C6D00861561 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -349,6 +469,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8430A1C81F2E091600C695B8 /* Build configuration list for PBXNativeTarget "CollageTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8430A1C91F2E091600C695B8 /* Debug */,
+				8430A1CA1F2E091600C695B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		8467B8E11BFE6C6D00861561 /* Build configuration list for PBXProject "wallpaperTimer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
