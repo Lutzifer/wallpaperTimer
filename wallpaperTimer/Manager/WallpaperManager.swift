@@ -16,9 +16,9 @@ class WallpaperManager {
 		self.folderManager = FolderManager(baseFolderPath: baseFolderPath)
 	}
 	
-	func setImageAtUrl(url: NSURL, screen: NSScreen) {
+	func setImageAtUrl(_ url: URL, screen: NSScreen) {
 		do {
-			try NSWorkspace.sharedWorkspace().setDesktopImageURL(url, forScreen: screen, options: Dictionary<String, AnyObject>())
+			try NSWorkspace.shared().setDesktopImageURL(url, for: screen, options: Dictionary<String, AnyObject>())
 		} catch let err as NSError {
 			print(err)
 		}
@@ -39,18 +39,18 @@ class WallpaperManager {
 		}
 	}
 	
-	func setWallpapers(wallpaperGroup: WallpaperGroup, screens: Array<NSScreen>) {
+	func setWallpapers(_ wallpaperGroup: WallpaperGroup, screens: Array<NSScreen>) {
 		var wallpapers = wallpaperGroup.wallpapers
 		
 		for screen in screens {
             
 			let index = randomWithMax(wallpapers.count)
-			setImageAtUrl(wallpapers[index].url, screen: screen)
-			wallpapers.removeAtIndex(index)
+			setImageAtUrl(wallpapers[index].url as URL, screen: screen)
+			wallpapers.remove(at: index)
 		}
 	}
 	
-	func randomWithMax(max: Int) -> Int {
+	func randomWithMax(_ max: Int) -> Int {
 		return Int(arc4random_uniform(UInt32(max)))
 	}
 	

@@ -12,18 +12,18 @@ enum DayTime: String {
 	case Morining, Noon, Afternoon, Evening, Night
 	
     init(hour: Int) {
-        if hour >= Night.beginningHour {
-            self = Night
-        } else if hour >= Evening.beginningHour {
-            self = Evening
-        } else if hour >= Afternoon.beginningHour {
-            self = Afternoon
-        } else if hour >= Noon.beginningHour {
-            self = Noon
-        } else if hour >= Morining.beginningHour {
-            self = Morining
+        if hour >= DayTime.Night.beginningHour {
+            self = .Night
+        } else if hour >= DayTime.Evening.beginningHour {
+            self = .Evening
+        } else if hour >= DayTime.Afternoon.beginningHour {
+            self = .Afternoon
+        } else if hour >= DayTime.Noon.beginningHour {
+            self = .Noon
+        } else if hour >= DayTime.Morining.beginningHour {
+            self = .Morining
         } else {
-            self = Night
+            self = .Night
         }
     }
     
@@ -43,7 +43,7 @@ enum DayTime: String {
     }
     
     static func currentDayTime() -> DayTime {
-        let hour = NSCalendar.currentCalendar().component(NSCalendarUnit.Hour, fromDate: NSDate())
+        let hour = (Calendar.current as NSCalendar).component(NSCalendar.Unit.hour, from: Date())
         return DayTime(hour: hour)
     }
     

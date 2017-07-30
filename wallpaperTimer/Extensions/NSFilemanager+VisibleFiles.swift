@@ -8,24 +8,20 @@
 
 import Foundation
 
-extension NSFileManager {
-	func visibleFileURLsAtURL(url: NSURL) -> Array<NSURL> {
-        var result = Array<NSURL>()
-        
-        guard let path = url.path else {
-            return result
-        }
-        
+extension FileManager {
+	func visibleFileURLsAtURL(_ url: URL) -> Array<URL> {
+        var result = Array<URL>()
+    
 		do {
 			var folderResult: Array<String>
 			
-			try folderResult = self.contentsOfDirectoryAtPath(path)
+			try folderResult = self.contentsOfDirectory(atPath: url.path)
             
 			// filter dotfiles
 			result = folderResult.filter({ filename -> Bool in
 					return !filename.hasPrefix(".")
-				}).map({ fileName -> NSURL in
-					url.URLByAppendingPathComponent(fileName)
+				}).map({ fileName -> URL in
+					url.appendingPathComponent(fileName)
 				})
 			
 			return result

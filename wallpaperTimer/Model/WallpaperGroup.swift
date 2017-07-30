@@ -10,9 +10,9 @@ import Foundation
 
 class WallpaperGroup {
 	var wallpapers: Array<Wallpaper>
-	var groupFolderURL: NSURL
+	var groupFolderURL: URL
 	
-	init(groupFolderURL: NSURL) {
+	init(groupFolderURL: URL) {
 		self.groupFolderURL = groupFolderURL
 		self.wallpapers = Array()
 	}
@@ -20,7 +20,7 @@ class WallpaperGroup {
 	func load() {
 		self.wallpapers = Array()
 		
-		for file in NSFileManager.defaultManager().visibleFileURLsAtURL(self.groupFolderURL) {
+		for file in FileManager.default.visibleFileURLsAtURL(self.groupFolderURL) {
 			self.wallpapers.append(Wallpaper(url: file))
 		}
 	}

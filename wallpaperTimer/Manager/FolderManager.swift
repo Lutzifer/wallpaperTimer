@@ -9,17 +9,17 @@
 import Cocoa
 
 class FolderManager {
-	var baseFolder: NSURL
+	var baseFolder: URL
 	
 	init(baseFolderPath: String) {
-		self.baseFolder = NSURL(fileURLWithPath: baseFolderPath)
+		self.baseFolder = URL(fileURLWithPath: baseFolderPath)
 	}
 	
-	func folderUrlUsingDaytime(useDaytime: Bool) -> NSURL {
+	func folderUrlUsingDaytime(_ useDaytime: Bool) -> URL {
 		if (useDaytime) {
-			return self.baseFolder.URLByAppendingPathComponent(self.folderNameForCurrentTime())
+			return self.baseFolder.appendingPathComponent(self.folderNameForCurrentTime())
 		} else {
-			return self.baseFolder.URLByAppendingPathComponent("all")
+			return self.baseFolder.appendingPathComponent("all")
 		}
 	}
 	
@@ -27,10 +27,10 @@ class FolderManager {
 		return DayTime.currentDayTime().rawValue
 	}
 	
-	func groupsUsingDaytime(useDaytime: Bool) -> Array<WallpaperGroup> {
+	func groupsUsingDaytime(_ useDaytime: Bool) -> Array<WallpaperGroup> {
 		var groups = Array<WallpaperGroup>()
 		
-		let folderUrls = NSFileManager.defaultManager().visibleFolderURLsAtURL(self.folderUrlUsingDaytime(useDaytime))
+		let folderUrls = FileManager.default.visibleFolderURLsAtURL(self.folderUrlUsingDaytime(useDaytime))
 		
 		for folderUrl in folderUrls {
 			let wallpaperGroup = WallpaperGroup(groupFolderURL: folderUrl)
