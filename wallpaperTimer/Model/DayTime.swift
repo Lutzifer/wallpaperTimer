@@ -12,19 +12,7 @@ enum DayTime: String, EnumCollection {
   case morning, noon, afternoon, evening, night
 
   init(hour: Int) {
-    if hour >= DayTime.night.beginningHour {
-      self = .night
-    } else if hour >= DayTime.evening.beginningHour {
-      self = .evening
-    } else if hour >= DayTime.afternoon.beginningHour {
-      self = .afternoon
-    } else if hour >= DayTime.noon.beginningHour {
-      self = .noon
-    } else if hour >= DayTime.morning.beginningHour {
-      self = .morning
-    } else {
-      self = .night
-    }
+    self = DayTime.allValues.first(where: { $0.beginningHour > hour }) ?? .night
   }
 
   var beginningHour: Int {
