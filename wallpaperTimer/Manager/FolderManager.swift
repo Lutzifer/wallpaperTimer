@@ -8,26 +8,24 @@
 
 import Cocoa
 
-class FolderManager {
-  var baseFolder: URL
-
-  init(baseFolderPath: String) {
-    self.baseFolder = URL(fileURLWithPath: baseFolderPath)
-  }
+struct FolderManager {
+  let baseFolder: URL
 
   func folderUrlUsingDaytime(_ useDaytime: Bool) -> URL {
-    if useDaytime {
-      return baseFolder.appendingPathComponent(folderNameForCurrentTime())
-    } else {
-      return baseFolder.appendingPathComponent("all")
-    }
-  }
 
-  func folderNameForCurrentTime() -> String {
-    return DayTime.currentDayTime().rawValue
+    let folderName: String
+
+    if useDaytime {
+      folderName = DayTime.currentDayTime().rawValue
+    } else {
+      folderName = "all"
+    }
+
+    return baseFolder.appendingPathComponent(folderName)
   }
 
   func groupsUsingDaytime(_ useDaytime: Bool) -> [WallpaperGroup] {
+
     var groups = [WallpaperGroup]()
 
     let folderUrls = FileManager.default.visibleFolderURLsAtURL(folderUrlUsingDaytime(useDaytime))

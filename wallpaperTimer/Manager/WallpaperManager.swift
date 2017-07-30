@@ -12,8 +12,8 @@ class WallpaperManager {
   let useDaytime: Bool
   let folderManager: FolderManager
 
-  init(baseFolderPath: String, useDaytime: Bool = false) {
-    self.folderManager = FolderManager(baseFolderPath: baseFolderPath)
+  init(baseFolder: URL, useDaytime: Bool = false) {
+    self.folderManager = FolderManager(baseFolder: baseFolder)
     self.useDaytime = useDaytime
   }
 

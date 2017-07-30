@@ -42,8 +42,8 @@ if help.value {
   exit(EX_USAGE)
 }
 
-if let baseFolderPath = sourcePath.value {
-  WallpaperManager(baseFolderPath: baseFolderPath, useDaytime: useDaytime.value).setWallpapers()
+if let value = sourcePath.value, let baseFolder = URL(string: value) {
+  WallpaperManager(baseFolder: baseFolder, useDaytime: useDaytime.value).setWallpapers()
 } else {
   cli.printUsage()
   exit(0)
