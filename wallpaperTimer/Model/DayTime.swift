@@ -9,7 +9,7 @@
 import Foundation
 
 enum DayTime: String {
-	case Morining, Noon, Afternoon, Evening, Night
+	case Morning, Noon, Afternoon, Evening, Night
 	
     init(hour: Int) {
         if hour >= DayTime.Night.beginningHour {
@@ -20,8 +20,8 @@ enum DayTime: String {
             self = .Afternoon
         } else if hour >= DayTime.Noon.beginningHour {
             self = .Noon
-        } else if hour >= DayTime.Morining.beginningHour {
-            self = .Morining
+        } else if hour >= DayTime.Morning.beginningHour {
+            self = .Morning
         } else {
             self = .Night
         }
@@ -29,7 +29,7 @@ enum DayTime: String {
     
     var beginningHour: Int {
         switch self {
-        case .Morining:
+        case .Morning:
             return 6
         case .Noon:
             return 11
@@ -59,5 +59,5 @@ enum DayTime: String {
         })
     }
     
-	static let allCases = Array(arrayLiteral: DayTime.Morining, DayTime.Noon, DayTime.Afternoon, DayTime.Evening, DayTime.Night)
+	static let allCases = Array(arrayLiteral: DayTime.Morning, DayTime.Noon, DayTime.Afternoon, DayTime.Evening, DayTime.Night)
 }
