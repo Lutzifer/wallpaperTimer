@@ -9,9 +9,9 @@
 /* Begin PBXBuildFile section */
 		8416BD261C2D7E9900DB04F6 /* WallpaperManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8416BD251C2D7E9900DB04F6 /* WallpaperManager.swift */; };
 		8467B8EA1BFE6C6D00861561 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467B8E91BFE6C6D00861561 /* main.swift */; };
-		847D27E11C2DC2AE0086EB81 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D27DB1C2DC2460086EB81 /* CommandLine.swift */; };
-		847D27E21C2DC2B20086EB81 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D27DE1C2DC2460086EB81 /* Option.swift */; };
-		847D27E31C2DC2B50086EB81 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D27E01C2DC2460086EB81 /* StringExtensions.swift */; };
+		847E35BC1F2DE19400A1FE45 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35B91F2DE19400A1FE45 /* CommandLine.swift */; };
+		847E35BD1F2DE19400A1FE45 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35BA1F2DE19400A1FE45 /* Option.swift */; };
+		847E35BE1F2DE19400A1FE45 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35BB1F2DE19400A1FE45 /* StringExtensions.swift */; };
 		84A14A071C2D9F02004E9D87 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A14A061C2D9F02004E9D87 /* DayTime.swift */; };
 		84A14A091C2DA013004E9D87 /* FolderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A14A081C2DA013004E9D87 /* FolderManager.swift */; };
 		84AF94661C2DA2EA00BE2F73 /* WallpaperGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */; };
@@ -36,12 +36,9 @@
 		8416BD251C2D7E9900DB04F6 /* WallpaperManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperManager.swift; sourceTree = "<group>"; };
 		8467B8E61BFE6C6D00861561 /* wallpaperTimer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = wallpaperTimer; sourceTree = BUILT_PRODUCTS_DIR; };
 		8467B8E91BFE6C6D00861561 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		847D27DB1C2DC2460086EB81 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
-		847D27DC1C2DC2460086EB81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		847D27DD1C2DC2460086EB81 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		847D27DE1C2DC2460086EB81 /* Option.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		847D27DF1C2DC2460086EB81 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		847D27E01C2DC2460086EB81 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		847E35B91F2DE19400A1FE45 /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandLine.swift; path = Dependencies/CommandLine/CommandLine.swift; sourceTree = SOURCE_ROOT; };
+		847E35BA1F2DE19400A1FE45 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Option.swift; path = Dependencies/CommandLine/Option.swift; sourceTree = SOURCE_ROOT; };
+		847E35BB1F2DE19400A1FE45 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Dependencies/CommandLine/StringExtensions.swift; sourceTree = SOURCE_ROOT; };
 		84A14A061C2D9F02004E9D87 /* DayTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		84A14A081C2DA013004E9D87 /* FolderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderManager.swift; sourceTree = "<group>"; };
 		84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperGroup.swift; sourceTree = "<group>"; };
@@ -120,12 +117,9 @@
 		847D27DA1C2DC2460086EB81 /* CommandLine */ = {
 			isa = PBXGroup;
 			children = (
-				847D27DB1C2DC2460086EB81 /* CommandLine.swift */,
-				847D27DC1C2DC2460086EB81 /* Info.plist */,
-				847D27DD1C2DC2460086EB81 /* LICENSE */,
-				847D27DE1C2DC2460086EB81 /* Option.swift */,
-				847D27DF1C2DC2460086EB81 /* README.md */,
-				847D27E01C2DC2460086EB81 /* StringExtensions.swift */,
+				847E35B91F2DE19400A1FE45 /* CommandLine.swift */,
+				847E35BA1F2DE19400A1FE45 /* Option.swift */,
+				847E35BB1F2DE19400A1FE45 /* StringExtensions.swift */,
 			);
 			path = CommandLine;
 			sourceTree = "<group>";
@@ -190,13 +184,13 @@
 			files = (
 				8416BD261C2D7E9900DB04F6 /* WallpaperManager.swift in Sources */,
 				84AF94661C2DA2EA00BE2F73 /* WallpaperGroup.swift in Sources */,
-				847D27E21C2DC2B20086EB81 /* Option.swift in Sources */,
+				847E35BD1F2DE19400A1FE45 /* Option.swift in Sources */,
 				84A14A091C2DA013004E9D87 /* FolderManager.swift in Sources */,
 				8467B8EA1BFE6C6D00861561 /* main.swift in Sources */,
 				84AF94681C2DA31400BE2F73 /* Wallpaper.swift in Sources */,
-				847D27E31C2DC2B50086EB81 /* StringExtensions.swift in Sources */,
+				847E35BE1F2DE19400A1FE45 /* StringExtensions.swift in Sources */,
 				84AF946C1C2DA40B00BE2F73 /* NSFileManager+VisibleFolders.swift in Sources */,
-				847D27E11C2DC2AE0086EB81 /* CommandLine.swift in Sources */,
+				847E35BC1F2DE19400A1FE45 /* CommandLine.swift in Sources */,
 				84AF946A1C2DA3F100BE2F73 /* NSFilemanager+VisibleFiles.swift in Sources */,
 				84A14A071C2D9F02004E9D87 /* DayTime.swift in Sources */,
 			);
