@@ -16,7 +16,7 @@ struct FolderManager {
     let folderName: String
 
     if useDaytime {
-      folderName = DayTime.currentDayTime().rawValue
+      folderName = DayTime.currentDayTimeName
     } else {
       folderName = "all"
     }

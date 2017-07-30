@@ -42,8 +42,11 @@ enum DayTime: String, EnumCollection {
     }
   }
 
-  static func currentDayTime() -> DayTime {
-    let hour = (Calendar.current as NSCalendar).component(NSCalendar.Unit.hour, from: Date())
-    return DayTime(hour: hour)
+  private static var currentDayTime: DayTime {
+    return DayTime(hour: Calendar.current.component(.hour, from: Date()))
+  }
+
+  static var currentDayTimeName: String {
+    return currentDayTime.rawValue
   }
 }
