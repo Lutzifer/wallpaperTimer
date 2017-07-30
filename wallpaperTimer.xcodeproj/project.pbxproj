@@ -12,6 +12,7 @@
 		847E35BC1F2DE19400A1FE45 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35B91F2DE19400A1FE45 /* CommandLine.swift */; };
 		847E35BD1F2DE19400A1FE45 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35BA1F2DE19400A1FE45 /* Option.swift */; };
 		847E35BE1F2DE19400A1FE45 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35BB1F2DE19400A1FE45 /* StringExtensions.swift */; };
+		847E35C11F2DE43800A1FE45 /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35C01F2DE43800A1FE45 /* EnumCollection.swift */; };
 		84A14A071C2D9F02004E9D87 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A14A061C2D9F02004E9D87 /* DayTime.swift */; };
 		84A14A091C2DA013004E9D87 /* FolderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A14A081C2DA013004E9D87 /* FolderManager.swift */; };
 		84AF94661C2DA2EA00BE2F73 /* WallpaperGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */; };
@@ -40,6 +41,7 @@
 		847E35B91F2DE19400A1FE45 /* CommandLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CommandLine.swift; path = Dependencies/CommandLine/CommandLine.swift; sourceTree = SOURCE_ROOT; };
 		847E35BA1F2DE19400A1FE45 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Option.swift; path = Dependencies/CommandLine/Option.swift; sourceTree = SOURCE_ROOT; };
 		847E35BB1F2DE19400A1FE45 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Dependencies/CommandLine/StringExtensions.swift; sourceTree = SOURCE_ROOT; };
+		847E35C01F2DE43800A1FE45 /* EnumCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		84A14A061C2D9F02004E9D87 /* DayTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		84A14A081C2DA013004E9D87 /* FolderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderManager.swift; sourceTree = "<group>"; };
 		84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperGroup.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				847D27D91C2DC1470086EB81 /* Extensions */,
 				847D27D71C2DC1350086EB81 /* Manager */,
 				847D27D81C2DC13B0086EB81 /* Model */,
+				847E35BF1F2DE42500A1FE45 /* Protocols */,
 				8467B8E91BFE6C6D00861561 /* main.swift */,
 			);
 			path = wallpaperTimer;
@@ -126,6 +129,14 @@
 				847E35BB1F2DE19400A1FE45 /* StringExtensions.swift */,
 			);
 			path = CommandLine;
+			sourceTree = "<group>";
+		};
+		847E35BF1F2DE42500A1FE45 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				847E35C01F2DE43800A1FE45 /* EnumCollection.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +223,7 @@
 				84AF94681C2DA31400BE2F73 /* Wallpaper.swift in Sources */,
 				847E35BE1F2DE19400A1FE45 /* StringExtensions.swift in Sources */,
 				84AF946C1C2DA40B00BE2F73 /* NSFileManager+VisibleFolders.swift in Sources */,
+				847E35C11F2DE43800A1FE45 /* EnumCollection.swift in Sources */,
 				847E35BC1F2DE19400A1FE45 /* CommandLine.swift in Sources */,
 				84AF946A1C2DA3F100BE2F73 /* NSFilemanager+VisibleFiles.swift in Sources */,
 				84A14A071C2D9F02004E9D87 /* DayTime.swift in Sources */,
