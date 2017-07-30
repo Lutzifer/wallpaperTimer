@@ -26,14 +26,9 @@ struct FolderManager {
 
   func groupsUsingDaytime(_ useDaytime: Bool) -> [WallpaperGroup] {
 
-    var groups = FileManager.default.visibleFolderURLsAtURL(folderUrlUsingDaytime(useDaytime))
-      .flatMap { WallpaperGroup(groupFolderURL: $0) }
+    let daytimeFolders = FileManager.default.visibleFolderURLsAtURL(folderUrlUsingDaytime(useDaytime))
+    let allFolders = FileManager.default.visibleFolderURLsAtURL(folderUrlUsingDaytime(false))
 
-    // if we have no results, get the results from the "all"-Folder
-    if useDaytime, groups.count == 0 {
-      groups = groupsUsingDaytime(false)
-    }
-
-    return groups
+    return (daytimeFolders + allFolders).flatMap { WallpaperGroup(groupFolderURL: $0) }
   }
 }

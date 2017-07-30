@@ -9,6 +9,7 @@
 import Foundation
 
 extension FileManager {
+
   func visibleFolderURLsAtURL(_ url: URL) -> [URL] {
     return FileManager.default.visibleFileURLs(at: url)
       .filter { fileUrl -> Bool in
