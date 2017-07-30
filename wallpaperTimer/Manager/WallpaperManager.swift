@@ -30,7 +30,7 @@ class WallpaperManager {
       let groups = self.folderManager.groupsUsingDaytime(self.useDaytime)
 
       let eligibleGroups = groups.filter({ group -> Bool in
-        group.numberOfWallpapers() >= screens.count
+        group.wallpapers.count >= screens.count
       })
 
       let groupIndex = randomWithMax(eligibleGroups.count)
