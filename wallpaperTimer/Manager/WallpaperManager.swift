@@ -12,14 +12,6 @@ struct WallpaperManager {
   let useDaytime: Bool
   let baseFolderPath: String
 
-  func setImageAtUrl(_ url: URL, screen: NSScreen) {
-    do {
-      try NSWorkspace.shared().setDesktopImageURL(url, for: screen, options: [String: AnyObject]())
-    } catch let err as NSError {
-      print(err)
-    }
-  }
-
   func setWallpapers() {
     if let screens = NSScreen.screens() {
       let wallpaperGroups = groups(at: URL(fileURLWithPath: self.baseFolderPath), usingDaytime: useDaytime)
@@ -41,12 +33,12 @@ struct WallpaperManager {
     for screen in screens {
 
       let index = randomWithMax(wallpapers.count)
-      setImageAtUrl(wallpapers[index].url as URL, screen: screen)
+      screen.setDesktopImage(at: wallpapers[index].url)
       wallpapers.remove(at: index)
     }
   }
 
-  func randomWithMax(_ max: Int) -> Int {
+  private func randomWithMax(_ max: Int) -> Int {
     return Int(arc4random_uniform(UInt32(max)))
   }
 
