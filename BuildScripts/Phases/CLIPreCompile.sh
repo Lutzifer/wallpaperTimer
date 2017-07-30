@@ -5,8 +5,7 @@ ruby BuildScripts/Common/ParallelSwiftformat.rb
 
 ruby BuildScripts/Common/ParallelSwiftlint.rb &
 
-ruby BuildScripts/Common/LintStringsFiles.rb -f "${SRCROOT}/TemplateApp/Supporting Files/Localizable.strings" &
-
+sh BuildScripts/Common/Misspell.sh "${SRCROOT}/wallpaperTimer" &
 wait
 
 # execute this script last because it's mutating files!
