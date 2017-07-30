@@ -8,14 +8,9 @@
 
 import Cocoa
 
-class WallpaperManager {
+struct WallpaperManager {
   let useDaytime: Bool
-  let folderManager: FolderManager
-
-  init(baseFolderPath: String, useDaytime: Bool = false) {
-    self.folderManager = FolderManager(baseFolder: URL(fileURLWithPath: baseFolderPath))
-    self.useDaytime = useDaytime
-  }
+  let baseFolderPath: String
 
   func setImageAtUrl(_ url: URL, screen: NSScreen) {
     do {
@@ -27,14 +22,14 @@ class WallpaperManager {
 
   func setWallpapers() {
     if let screens = NSScreen.screens() {
-      let groups = folderManager.groupsUsingDaytime(useDaytime)
+      let wallpaperGroups = groups(at: URL(fileURLWithPath: self.baseFolderPath), usingDaytime: useDaytime)
 
-      let eligibleGroups = groups.filter({ group -> Bool in
+      let eligibleGroups = wallpaperGroups.filter { group -> Bool in
         group.wallpapers.count >= screens.count
-      })
+      }
 
       let groupIndex = randomWithMax(eligibleGroups.count)
-      let selectedGroup = groups[groupIndex]
+      let selectedGroup = wallpaperGroups[groupIndex]
 
       setWallpapers(selectedGroup, screens: screens)
     }
@@ -53,5 +48,14 @@ class WallpaperManager {
 
   func randomWithMax(_ max: Int) -> Int {
     return Int(arc4random_uniform(UInt32(max)))
+  }
+
+  private func groups(at baseUrl: URL, usingDaytime: Bool) -> [WallpaperGroup] {
+    return [
+      baseUrl.appendingPathComponent(DayTime.currentDayTimeName),
+      baseUrl.appendingPathComponent("all")
+    ]
+    .flatMap { FileManager.default.visibleFolderURLsAtURL($0) }
+    .flatMap { WallpaperGroup(groupFolderURL: $0) }
   }
 }

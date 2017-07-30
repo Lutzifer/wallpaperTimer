@@ -14,7 +14,6 @@
 		847E35BE1F2DE19400A1FE45 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35BB1F2DE19400A1FE45 /* StringExtensions.swift */; };
 		847E35C11F2DE43800A1FE45 /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35C01F2DE43800A1FE45 /* EnumCollection.swift */; };
 		84A14A071C2D9F02004E9D87 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A14A061C2D9F02004E9D87 /* DayTime.swift */; };
-		84A14A091C2DA013004E9D87 /* FolderManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A14A081C2DA013004E9D87 /* FolderManager.swift */; };
 		84AF94661C2DA2EA00BE2F73 /* WallpaperGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */; };
 		84AF94681C2DA31400BE2F73 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94671C2DA31400BE2F73 /* Wallpaper.swift */; };
 		84AF946A1C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */; };
@@ -43,7 +42,6 @@
 		847E35BB1F2DE19400A1FE45 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Dependencies/CommandLine/StringExtensions.swift; sourceTree = SOURCE_ROOT; };
 		847E35C01F2DE43800A1FE45 /* EnumCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		84A14A061C2D9F02004E9D87 /* DayTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
-		84A14A081C2DA013004E9D87 /* FolderManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderManager.swift; sourceTree = "<group>"; };
 		84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperGroup.swift; sourceTree = "<group>"; };
 		84AF94671C2DA31400BE2F73 /* Wallpaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
 		84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Filemanager+VisibleFiles.swift"; sourceTree = "<group>"; };
@@ -96,7 +94,6 @@
 		847D27D71C2DC1350086EB81 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				84A14A081C2DA013004E9D87 /* FolderManager.swift */,
 				8416BD251C2D7E9900DB04F6 /* WallpaperManager.swift */,
 			);
 			path = Manager;
@@ -218,7 +215,6 @@
 				8416BD261C2D7E9900DB04F6 /* WallpaperManager.swift in Sources */,
 				84AF94661C2DA2EA00BE2F73 /* WallpaperGroup.swift in Sources */,
 				847E35BD1F2DE19400A1FE45 /* Option.swift in Sources */,
-				84A14A091C2DA013004E9D87 /* FolderManager.swift in Sources */,
 				8467B8EA1BFE6C6D00861561 /* main.swift in Sources */,
 				84AF94681C2DA31400BE2F73 /* Wallpaper.swift in Sources */,
 				847E35BE1F2DE19400A1FE45 /* StringExtensions.swift in Sources */,
