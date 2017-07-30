@@ -17,7 +17,6 @@ let help = BoolOption(shortFlag: "h", longFlag: "help",
 let useDaytime = BoolOption(shortFlag: "d", longFlag: "daytime",
 	helpMessage: "Use folders depending on the time of day.")
 
-
 cli.addOptions(sourcePath, help, useDaytime)
 
 do {
@@ -33,9 +32,7 @@ if (help.value) {
 }
 
 if let baseFolderPath = sourcePath.value {
-	let wallpaperManager = WallpaperManager(baseFolderPath: baseFolderPath)
-	wallpaperManager.useDaytime = useDaytime.value
-	wallpaperManager.setWallpapers()
+    WallpaperManager(baseFolderPath: baseFolderPath, useDaytime: useDaytime.value).setWallpapers()
 } else {
 	cli.printUsage()
 	exit(0)

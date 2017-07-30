@@ -9,11 +9,12 @@
 import Cocoa
 
 class WallpaperManager {
-	var useDaytime = false
-	var folderManager: FolderManager
+    let useDaytime: Bool
+	let folderManager: FolderManager
 	
-	init(baseFolderPath: String) {
+    init(baseFolderPath: String, useDaytime: Bool = false) {
 		self.folderManager = FolderManager(baseFolderPath: baseFolderPath)
+        self.useDaytime = useDaytime
 	}
 	
 	func setImageAtUrl(_ url: URL, screen: NSScreen) {
