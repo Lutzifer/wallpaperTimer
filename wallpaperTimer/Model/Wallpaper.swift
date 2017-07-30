@@ -9,9 +9,9 @@
 import Foundation
 
 class Wallpaper {
-	let url: URL
-	
-	init(url: URL) {
-		self.url = url
-	}
+  let url: URL
+
+  init(url: URL) {
+    self.url = url
+  }
 }

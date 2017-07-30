@@ -8,54 +8,52 @@
 
 import Foundation
 
-enum DayTime: String {
-	case Morning, Noon, Afternoon, Evening, Night
-	
-    init(hour: Int) {
-        if hour >= DayTime.Night.beginningHour {
-            self = .Night
-        } else if hour >= DayTime.Evening.beginningHour {
-            self = .Evening
-        } else if hour >= DayTime.Afternoon.beginningHour {
-            self = .Afternoon
-        } else if hour >= DayTime.Noon.beginningHour {
-            self = .Noon
-        } else if hour >= DayTime.Morning.beginningHour {
-            self = .Morning
-        } else {
-            self = .Night
-        }
+enum DayTime: String, EnumCollection {
+  case morning, noon, afternoon, evening, night
+
+  init(hour: Int) {
+    if hour >= DayTime.night.beginningHour {
+      self = .night
+    } else if hour >= DayTime.evening.beginningHour {
+      self = .evening
+    } else if hour >= DayTime.afternoon.beginningHour {
+      self = .afternoon
+    } else if hour >= DayTime.noon.beginningHour {
+      self = .noon
+    } else if hour >= DayTime.morning.beginningHour {
+      self = .morning
+    } else {
+      self = .night
     }
-    
-    var beginningHour: Int {
-        switch self {
-        case .Morning:
-            return 6
-        case .Noon:
-            return 11
-        case .Afternoon:
-            return 13
-        case .Evening:
-            return 17
-        case .Night:
-            return 22
-        }
+  }
+
+  var beginningHour: Int {
+    switch self {
+    case .morning:
+      return 6
+    case .noon:
+      return 11
+    case .afternoon:
+      return 13
+    case .evening:
+      return 17
+    case .night:
+      return 22
     }
-    
-    static func currentDayTime() -> DayTime {
-        let hour = (Calendar.current as NSCalendar).component(NSCalendar.Unit.hour, from: Date())
-        return DayTime(hour: hour)
-    }
-    
-    static func allCaseStrings() -> Array<String> {
-        return DayTime.allCases.map { $0.rawValue }
-    }
-    
-    static func allCaseStringsWithBeginning() -> Array<String> {
-        return DayTime.allCases.map({(dayTime) -> String in
-            "'\(dayTime.rawValue)' (begins at \(dayTime.beginningHour) ó clock)"
-        })
-    }
-    
-	static let allCases = Array(arrayLiteral: DayTime.Morning, DayTime.Noon, DayTime.Afternoon, DayTime.Evening, DayTime.Night)
+  }
+
+  static func currentDayTime() -> DayTime {
+    let hour = (Calendar.current as NSCalendar).component(NSCalendar.Unit.hour, from: Date())
+    return DayTime(hour: hour)
+  }
+
+  static func allCaseStrings() -> [String] {
+    return DayTime.allValues().map { $0.rawValue }
+  }
+
+  static func allCaseStringsWithBeginning() -> [String] {
+    return DayTime.allValues().map({ (dayTime) -> String in
+      "'\(dayTime.rawValue)' (begins at \(dayTime.beginningHour) ó clock)"
+    })
+  }
 }

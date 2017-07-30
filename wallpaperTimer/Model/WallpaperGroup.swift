@@ -9,24 +9,23 @@
 import Foundation
 
 class WallpaperGroup {
-	var wallpapers: Array<Wallpaper>
-	var groupFolderURL: URL
-	
-	init(groupFolderURL: URL) {
-		self.groupFolderURL = groupFolderURL
-		self.wallpapers = Array()
-	}
-	
-	func load() {
-		self.wallpapers = Array()
-		
-		for file in FileManager.default.visibleFileURLsAtURL(self.groupFolderURL) {
-			self.wallpapers.append(Wallpaper(url: file))
-		}
-	}
-	
-	func numberOfWallpapers() -> Int {
-		return wallpapers.count
-	}
-	
+  var wallpapers: [Wallpaper]
+  var groupFolderURL: URL
+
+  init(groupFolderURL: URL) {
+    self.groupFolderURL = groupFolderURL
+    self.wallpapers = Array()
+  }
+
+  func load() {
+    self.wallpapers = Array()
+
+    for file in FileManager.default.visibleFileURLsAtURL(self.groupFolderURL) {
+      self.wallpapers.append(Wallpaper(url: file))
+    }
+  }
+
+  func numberOfWallpapers() -> Int {
+    return wallpapers.count
+  }
 }
