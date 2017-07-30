@@ -4,7 +4,7 @@ public protocol EnumCollection: Hashable {}
 
 extension EnumCollection {
 
-  public static func allValues() -> [Self] {
+  public static var allValues: [Self] {
     let retVal = AnySequence { () -> AnyIterator<Self> in
       var raw = 0
       return AnyIterator {

@@ -14,7 +14,7 @@ let sourcePath = StringOption(
   shortFlag: "s",
   longFlag: "sourcepath",
   helpMessage: "Path to the Folder which contains the Folders '"
-    + DayTime.allCaseStringsWithBeginning().joined(separator: ", ")
+    + DayTime.allCaseStringsWithBeginning.joined(separator: ", ")
     + "' and 'all' (used if other folder is empty or -d flag not given)."
 )
 let help = BoolOption(

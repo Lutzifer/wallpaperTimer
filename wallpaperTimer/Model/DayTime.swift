@@ -47,13 +47,7 @@ enum DayTime: String, EnumCollection {
     return DayTime(hour: hour)
   }
 
-  static func allCaseStrings() -> [String] {
-    return DayTime.allValues().map { $0.rawValue }
-  }
-
-  static func allCaseStringsWithBeginning() -> [String] {
-    return DayTime.allValues().map({ (dayTime) -> String in
-      "'\(dayTime.rawValue)' (begins at \(dayTime.beginningHour) ó clock)"
-    })
+  static var allCaseStringsWithBeginning: [String] {
+    return allValues.map { "'\($0.rawValue)' (begins at \($0.beginningHour) ó clock)" }
   }
 }
