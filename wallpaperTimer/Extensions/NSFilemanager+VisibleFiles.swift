@@ -15,7 +15,7 @@ extension FileManager {
     do {
       var folderResult: [String]
 
-      try folderResult = self.contentsOfDirectory(atPath: url.path)
+      try folderResult = contentsOfDirectory(atPath: url.path)
 
       // filter dotfiles
       result = folderResult.filter({ filename -> Bool in

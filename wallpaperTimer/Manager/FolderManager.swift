@@ -17,9 +17,9 @@ class FolderManager {
 
   func folderUrlUsingDaytime(_ useDaytime: Bool) -> URL {
     if useDaytime {
-      return self.baseFolder.appendingPathComponent(self.folderNameForCurrentTime())
+      return baseFolder.appendingPathComponent(folderNameForCurrentTime())
     } else {
-      return self.baseFolder.appendingPathComponent("all")
+      return baseFolder.appendingPathComponent("all")
     }
   }
 
@@ -30,7 +30,7 @@ class FolderManager {
   func groupsUsingDaytime(_ useDaytime: Bool) -> [WallpaperGroup] {
     var groups = [WallpaperGroup]()
 
-    let folderUrls = FileManager.default.visibleFolderURLsAtURL(self.folderUrlUsingDaytime(useDaytime))
+    let folderUrls = FileManager.default.visibleFolderURLsAtURL(folderUrlUsingDaytime(useDaytime))
 
     for folderUrl in folderUrls {
       let wallpaperGroup = WallpaperGroup(groupFolderURL: folderUrl)
@@ -39,7 +39,7 @@ class FolderManager {
 
     // if we have no results, get the results from the "all"-Folder
     if useDaytime && groups.count == 0 {
-      groups = self.groupsUsingDaytime(false)
+      groups = groupsUsingDaytime(false)
     }
 
     return groups

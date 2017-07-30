@@ -27,7 +27,7 @@ class WallpaperManager {
 
   func setWallpapers() {
     if let screens = NSScreen.screens() {
-      let groups = self.folderManager.groupsUsingDaytime(self.useDaytime)
+      let groups = folderManager.groupsUsingDaytime(useDaytime)
 
       let eligibleGroups = groups.filter({ group -> Bool in
         group.wallpapers.count >= screens.count
@@ -36,7 +36,7 @@ class WallpaperManager {
       let groupIndex = randomWithMax(eligibleGroups.count)
       let selectedGroup = groups[groupIndex]
 
-      self.setWallpapers(selectedGroup, screens: screens)
+      setWallpapers(selectedGroup, screens: screens)
     }
   }
 
