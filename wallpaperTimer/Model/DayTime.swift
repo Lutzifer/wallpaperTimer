@@ -48,9 +48,7 @@ enum DayTime: String {
     }
     
     static func allCaseStrings() -> Array<String> {
-        return DayTime.allCases.map({(dayTime) -> String in
-            dayTime.rawValue
-        })
+        return DayTime.allCases.map { $0.rawValue }
     }
     
     static func allCaseStringsWithBeginning() -> Array<String> {
