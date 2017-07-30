@@ -11,7 +11,7 @@ import Foundation
 struct WallpaperGroup {
   let groupFolderURL: URL
 
-  var wallpapers: [Wallpaper] {
-    return FileManager.default.visibleFileURLs(at: groupFolderURL).map { Wallpaper(url: $0) }
+  var wallpaperURLs: [URL] {
+    return FileManager.default.visibleFileURLs(at: groupFolderURL)
   }
 }

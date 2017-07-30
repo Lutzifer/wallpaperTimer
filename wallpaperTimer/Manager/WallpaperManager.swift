@@ -13,33 +13,19 @@ struct WallpaperManager {
   let baseFolderPath: String
 
   func setWallpapers() {
-    if let screens = NSScreen.screens() {
-      let wallpaperGroups = groups(at: URL(fileURLWithPath: self.baseFolderPath), usingDaytime: useDaytime)
+    guard let screens = NSScreen.screens() else { return }
 
-      let eligibleGroups = wallpaperGroups.filter { group -> Bool in
-        group.wallpapers.count >= screens.count
-      }
+    let eligibleGroups =
+      groups(at: URL(fileURLWithPath: self.baseFolderPath), usingDaytime: useDaytime)
+      .filter { $0.wallpaperURLs.count >= screens.count }
 
-      let groupIndex = randomWithMax(eligibleGroups.count)
-      let selectedGroup = wallpaperGroups[groupIndex]
+    var wallpaperURLsToSet = eligibleGroups[Int.random(withMaximum: eligibleGroups.count)].wallpaperURLs
 
-      setWallpapers(selectedGroup, screens: screens)
+    screens.forEach {
+      let index = Int.random(withMaximum: wallpaperURLsToSet.count)
+      $0.setDesktopImage(at: wallpaperURLsToSet[index])
+      wallpaperURLsToSet.remove(at: index)
     }
-  }
-
-  func setWallpapers(_ wallpaperGroup: WallpaperGroup, screens: [NSScreen]) {
-    var wallpapers = wallpaperGroup.wallpapers
-
-    for screen in screens {
-
-      let index = randomWithMax(wallpapers.count)
-      screen.setDesktopImage(at: wallpapers[index].url)
-      wallpapers.remove(at: index)
-    }
-  }
-
-  private func randomWithMax(_ max: Int) -> Int {
-    return Int(arc4random_uniform(UInt32(max)))
   }
 
   private func groups(at baseUrl: URL, usingDaytime: Bool) -> [WallpaperGroup] {

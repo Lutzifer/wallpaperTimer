@@ -14,9 +14,9 @@
 		847E35BE1F2DE19400A1FE45 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35BB1F2DE19400A1FE45 /* StringExtensions.swift */; };
 		847E35C11F2DE43800A1FE45 /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35C01F2DE43800A1FE45 /* EnumCollection.swift */; };
 		847E35C31F2DF65000A1FE45 /* NSScreen+SetWallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35C21F2DF65000A1FE45 /* NSScreen+SetWallpaper.swift */; };
+		847E35C51F2DF71600A1FE45 /* Int+RandomWithMax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847E35C41F2DF71600A1FE45 /* Int+RandomWithMax.swift */; };
 		84A14A071C2D9F02004E9D87 /* DayTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A14A061C2D9F02004E9D87 /* DayTime.swift */; };
 		84AF94661C2DA2EA00BE2F73 /* WallpaperGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */; };
-		84AF94681C2DA31400BE2F73 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94671C2DA31400BE2F73 /* Wallpaper.swift */; };
 		84AF946A1C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */; };
 		84AF946C1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AF946B1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift */; };
 /* End PBXBuildFile section */
@@ -43,9 +43,9 @@
 		847E35BB1F2DE19400A1FE45 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Dependencies/CommandLine/StringExtensions.swift; sourceTree = SOURCE_ROOT; };
 		847E35C01F2DE43800A1FE45 /* EnumCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		847E35C21F2DF65000A1FE45 /* NSScreen+SetWallpaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSScreen+SetWallpaper.swift"; sourceTree = "<group>"; };
+		847E35C41F2DF71600A1FE45 /* Int+RandomWithMax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+RandomWithMax.swift"; sourceTree = "<group>"; };
 		84A14A061C2D9F02004E9D87 /* DayTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTime.swift; sourceTree = "<group>"; };
 		84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WallpaperGroup.swift; sourceTree = "<group>"; };
-		84AF94671C2DA31400BE2F73 /* Wallpaper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
 		84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Filemanager+VisibleFiles.swift"; sourceTree = "<group>"; };
 		84AF946B1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+VisibleFolders.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,7 +105,6 @@
 			isa = PBXGroup;
 			children = (
 				84A14A061C2D9F02004E9D87 /* DayTime.swift */,
-				84AF94671C2DA31400BE2F73 /* Wallpaper.swift */,
 				84AF94651C2DA2EA00BE2F73 /* WallpaperGroup.swift */,
 			);
 			path = Model;
@@ -117,6 +116,7 @@
 				84AF946B1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift */,
 				84AF94691C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift */,
 				847E35C21F2DF65000A1FE45 /* NSScreen+SetWallpaper.swift */,
+				847E35C41F2DF71600A1FE45 /* Int+RandomWithMax.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,13 +219,13 @@
 				84AF94661C2DA2EA00BE2F73 /* WallpaperGroup.swift in Sources */,
 				847E35BD1F2DE19400A1FE45 /* Option.swift in Sources */,
 				8467B8EA1BFE6C6D00861561 /* main.swift in Sources */,
-				84AF94681C2DA31400BE2F73 /* Wallpaper.swift in Sources */,
 				847E35C31F2DF65000A1FE45 /* NSScreen+SetWallpaper.swift in Sources */,
 				847E35BE1F2DE19400A1FE45 /* StringExtensions.swift in Sources */,
 				84AF946C1C2DA40B00BE2F73 /* FileManager+VisibleFolders.swift in Sources */,
 				847E35C11F2DE43800A1FE45 /* EnumCollection.swift in Sources */,
 				847E35BC1F2DE19400A1FE45 /* CommandLine.swift in Sources */,
 				84AF946A1C2DA3F100BE2F73 /* Filemanager+VisibleFiles.swift in Sources */,
+				847E35C51F2DF71600A1FE45 /* Int+RandomWithMax.swift in Sources */,
 				84A14A071C2D9F02004E9D87 /* DayTime.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

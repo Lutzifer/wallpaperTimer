@@ -11,6 +11,7 @@ import Cocoa
 extension NSScreen {
 
   func setDesktopImage(at url: URL) {
+
     do {
       try NSWorkspace.shared().setDesktopImageURL(url, for: self, options: [String: AnyObject]())
     } catch let err as NSError {
