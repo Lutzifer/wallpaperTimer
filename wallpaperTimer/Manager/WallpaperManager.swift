@@ -13,7 +13,7 @@ struct WallpaperManager {
   let baseFolderPath: String
 
   func setWallpapers() {
-    guard let screens = NSScreen.screens() else { return }
+    let screens = NSScreen.screens
 
     let eligibleGroups =
       groups(at: URL(fileURLWithPath: self.baseFolderPath), usingDaytime: useDaytime)

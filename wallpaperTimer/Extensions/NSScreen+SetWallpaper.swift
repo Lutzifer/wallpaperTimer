@@ -13,7 +13,7 @@ extension NSScreen {
   func setDesktopImage(at url: URL) {
 
     do {
-      try NSWorkspace.shared().setDesktopImageURL(url, for: self, options: [String: AnyObject]())
+      try NSWorkspace.shared.setDesktopImageURL(url, for: self)
     } catch let err as NSError {
       print(err)
     }
