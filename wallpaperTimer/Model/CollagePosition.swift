@@ -20,92 +20,20 @@ enum CollagePosition: String, EnumCollection {
 
   func rect(for screenSize: CGSize) -> CGRect {
     return CGRect(
-      x: positionX(for: screenSize),
-      y: positionY(for: screenSize),
-      width: width(for: screenSize),
-      height: height(for: screenSize)
+      x: ([.right, .topRight, .bottomRight].contains(self) ? 0.5 : 0.0) * screenSize.width,
+      y: ([.top, .topLeft, .topRight].contains(self) ? 0.5 : 0.0) * screenSize.height,
+      width: ([.top, .bottom].contains(self) ? 1.0 : 0.5) * screenSize.width,
+      height: ([.left, .right].contains(self) ? 1.0 : 0.5) * screenSize.height
     )
-  }
-
-  private func positionX(for screenSize: CGSize) -> CGFloat {
-    switch self {
-    case .top, .bottom, .left, .topLeft, .bottomLeft:
-      return 0
-    default:
-      return screenSize.width * 0.5
-    }
-  }
-
-  private func positionY(for screenSize: CGSize) -> CGFloat {
-    switch self {
-    case .top, .topLeft, .topRight:
-      return screenSize.height * 0.5
-    default:
-      return 0
-    }
-  }
-
-  private func width(for screenSize: CGSize) -> CGFloat {
-    switch self {
-    case .top, .bottom:
-      return screenSize.width
-    default:
-      return screenSize.width * 0.5
-    }
-  }
-
-  private func height(for screenSize: CGSize) -> CGFloat {
-    switch self {
-    case .left, .right:
-      return screenSize.height
-    default:
-      return screenSize.height * 0.5
-    }
   }
 
   func rectOfImage(for imageSize: CGSize) -> CGRect {
     return CGRect(
-      x: imagePositionX(for: imageSize),
-      y: imagePositionY(for: imageSize),
-      width: imageWidth(for: imageSize),
-      height: imageHeight(for: imageSize)
+      x: ([.left, .right].contains(self) ? 0.375 : 0.0) * imageSize.width,
+      y: ([.top, .bottom].contains(self) ? 0.375 : 0.0) * imageSize.height,
+      width: ([.left, .right].contains(self) ? 0.5 : 1.0) * imageSize.width,
+      height: ([.top, .bottom].contains(self) ? 0.5 : 1.0) * imageSize.height
     )
-  }
-
-  private func imagePositionX(for imageSize: CGSize) -> CGFloat {
-    switch self {
-    case .left, .right:
-      return imageSize.width * 0.375
-    default:
-      return 0
-    }
-  }
-
-  private func imagePositionY(for imageSize: CGSize) -> CGFloat {
-    switch self {
-    case .top, .bottom:
-      return imageSize.height * 0.375
-    default:
-      return 0
-    }
-  }
-
-  private func imageWidth(for imageSize: CGSize) -> CGFloat {
-    switch self {
-    case .left, .right:
-      return imageSize.width * 0.5
-    default:
-      return imageSize.width
-    }
-  }
-
-  private func imageHeight(for imageSize: CGSize) -> CGFloat {
-    switch self {
-    case .top, .bottom:
-      return imageSize.height * 0.5
-    default:
-      return imageSize.height
-    }
   }
 }
 
