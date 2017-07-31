@@ -14,14 +14,18 @@ struct WallpaperManager {
 
   func setWallpapers() {
     let screens = NSScreen.screens
-    let urls: [URL]
 
+    for (screen, url) in zip(screens, urlsToWallpapers(for: screens)) {
+      screen.setDesktopImage(at: url)
+    }
+  }
+
+  private func urlsToWallpapers(for screens: [NSScreen]) -> [URL] {
     let eligibleGroups =
       groups(at: URL(fileURLWithPath: self.baseFolderPath), usingDaytime: useDaytime)
 
     if screens.count == 1, let screen = screens.first {
       // If there is only one screen, we make a collage
-
       let wallpaperURLsToSet = eligibleGroups[Int.random(withMaximum: eligibleGroups.count)]
         .wallpaperURLs
         .shuffled()
@@ -33,16 +37,12 @@ struct WallpaperManager {
           at: wallpaperURLsToSet.map { $0.path },
           to: collagePath
         )
-      urls = [URL(fileURLWithPath: collagePath)]
+      return [URL(fileURLWithPath: collagePath)]
     } else {
-      urls = eligibleGroups
-        .filter { $0.wallpaperURLs.count >= screens.count } [Int.random(withMaximum: eligibleGroups.count)]
+      return eligibleGroups
+        .filter { $0.wallpaperURLs.count >= screens.count }[Int.random(withMaximum: eligibleGroups.count)]
         .wallpaperURLs
         .shuffled()
-    }
-
-    for (screen, url) in zip(screens, urls) {
-      screen.setDesktopImage(at: url)
     }
   }
 
