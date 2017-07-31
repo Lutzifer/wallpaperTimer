@@ -1,6 +1,21 @@
 # Wallpapertimer
 A CLI tool that sets all wallpapers of all screens based on groups defined by a certain folder structure. Supports to use groups for certain hours of the day.
 
+## Features
+
+### Multiscreen Mode
+
+If multiple screens are available, a group of pictures (i.e. a folder), see Examples section below, is spread across the screens:
+
+![Multiple Screen Example](https://raw.githubusercontent.com/Lutzifer/Wallpapertimer/master/imgs/multiscreen_example.jpg)
+
+### Singlescreen Mode
+
+If only a single screen is available, a collage of up to four images from a group is set as the wallpaper:
+
+![Single Screen Example](https://raw.githubusercontent.com/Lutzifer/Wallpapertimer/master/imgs/singlescreen_example.jpg)
+
+
 ## Installation
 
 ```
@@ -94,7 +109,7 @@ takes (a) random image/images from either /Wallpaper/all/L or /Wallpaper/all/M
 wallpapertimer -d -s "/Wallpaper"
 ```
 
-takes (a) random image/images from either /Wallpaper/\<daytime\>/\<Subfolder\>, e.g. /Wallpaper/night/I
+takes (a) random image/images from one of the /Wallpaper/\<daytime\>/\<Subfolder\>, e.g. /Wallpaper/night/I, or from /Wallpaper/all/L or /Wallpaper/all/M
 
 ## Automation
 
@@ -109,4 +124,3 @@ Just set the job to run to something like
 and set a regular start interval, e.g. 900 seconds.
 
 ![launchcontrol](https://raw.githubusercontent.com/Lutzifer/Wallpapertimer/master/imgs/launchcontrol.png)
-
