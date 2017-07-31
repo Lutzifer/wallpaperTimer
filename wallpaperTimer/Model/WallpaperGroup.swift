@@ -8,25 +8,10 @@
 
 import Foundation
 
-class WallpaperGroup {
-	var wallpapers: Array<Wallpaper>
-	var groupFolderURL: NSURL
-	
-	init(groupFolderURL: NSURL) {
-		self.groupFolderURL = groupFolderURL
-		self.wallpapers = Array()
-	}
-	
-	func load() {
-		self.wallpapers = Array()
-		
-		for file in NSFileManager.defaultManager().visibleFileURLsAtURL(self.groupFolderURL) {
-			self.wallpapers.append(Wallpaper(url: file))
-		}
-	}
-	
-	func numberOfWallpapers() -> Int {
-		return wallpapers.count
-	}
-	
+struct WallpaperGroup {
+  let groupFolderURL: URL
+
+  var wallpaperURLs: [URL] {
+    return FileManager.default.visibleFileURLs(at: groupFolderURL)
+  }
 }

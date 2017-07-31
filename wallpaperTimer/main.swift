@@ -10,39 +10,41 @@ import AppKit
 
 let cli = CommandLine()
 
-let sourcePath = StringOption(shortFlag: "s", longFlag: "sourcepath",
-	helpMessage: "Path to the Folder which contains the Folders '\(DayTime.allCaseStringsWithBeginning().joinWithSeparator(", ")) and 'all' (used if other folder is empty or -d flag not given).")
-let help = BoolOption(shortFlag: "h", longFlag: "help",
-	helpMessage: "Prints a help message.")
-let useDaytime = BoolOption(shortFlag: "d", longFlag: "daytime",
-	helpMessage: "Use folders depending on the time of day.")
-
+let sourcePath = StringOption(
+  shortFlag: "s",
+  longFlag: "sourcepath",
+  helpMessage: "Path to the Folder which contains the Folders '"
+    + DayTime.allValues.map { "'\($0.rawValue)' (begins at \($0.beginningHour) ó clock)" }.joined(separator: ", ")
+    + "' and 'all' (used if other folder is empty or -d flag not given)."
+)
+let help = BoolOption(
+  shortFlag: "h",
+  longFlag: "help",
+  helpMessage: "Prints a help message."
+)
+let useDaytime = BoolOption(
+  shortFlag: "d",
+  longFlag: "daytime",
+  helpMessage: "Use folders depending on the time of day."
+)
 
 cli.addOptions(sourcePath, help, useDaytime)
 
 do {
-	try cli.parse()
+  try cli.parse()
 } catch {
-	cli.printUsage(error)
-	exit(EX_USAGE)
+  cli.printUsage(error)
+  exit(EX_USAGE)
 }
 
-if (help.value) {
-	cli.printUsage()
-	exit(EX_USAGE)
+if help.value {
+  cli.printUsage()
+  exit(EX_USAGE)
 }
 
-if let baseFolderPath = sourcePath.value {
-	let wallpaperManager = WallpaperManager(baseFolderPath: baseFolderPath)
-	wallpaperManager.useDaytime = useDaytime.value
-	wallpaperManager.setWallpapers()
+if let value = sourcePath.value {
+  WallpaperManager(useDaytime: useDaytime.value, baseFolderPath: value).setWallpapers()
 } else {
-	cli.printUsage()
-	exit(0)
+  cli.printUsage()
+  exit(0)
 }
-
-
-
-
-
-
