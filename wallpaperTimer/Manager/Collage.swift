@@ -19,7 +19,7 @@ struct Collage {
       NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmap)
 
       let positions = CollagePosition.allCombinations(for: inputPaths.count)
-      let positionSet = positions[Int.random(withMaximum: (positions.count))]
+      let positionSet = positions[Int.random(withMaximum: positions.count)]
 
       for (inputPath, position) in zip(inputPaths, positionSet) {
         drawImage(at: inputPath, at: position, with: screenSize)
