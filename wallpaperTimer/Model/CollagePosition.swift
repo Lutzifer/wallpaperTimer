@@ -124,7 +124,7 @@ extension CollagePosition {
         [.top, .bottomLeft, .bottomRight],
         [.bottom, .topLeft, .topRight],
         [.left, .topRight, .bottomRight],
-        [.right, .topLeft, .topRight]
+        [.right, .topLeft, .bottomLeft]
       ]
     case 4:
       result = [
