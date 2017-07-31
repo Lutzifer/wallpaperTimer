@@ -138,7 +138,6 @@ extension CollagePosition {
   }
 
   static func allCombinations(for maxNumberOfImages: Int) -> [[CollagePosition]] {
-    let highestAllowed = maxNumberOfImages <= 4 ? maxNumberOfImages : 4
-    return (0 ... highestAllowed).flatMap { combinations(for: $0) }
+    return (0 ... maxNumberOfImages).prefix(5).flatMap { combinations(for: $0) }
   }
 }
