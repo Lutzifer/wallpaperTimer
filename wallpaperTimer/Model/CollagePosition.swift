@@ -9,6 +9,7 @@
 import CoreImage
 
 enum CollagePosition: String, EnumCollection {
+  case fullscreen
   case top
   case bottom
   case left
@@ -22,8 +23,8 @@ enum CollagePosition: String, EnumCollection {
     return CGRect(
       x: ([.right, .topRight, .bottomRight].contains(self) ? 0.5 : 0.0) * screenSize.width,
       y: ([.top, .topLeft, .topRight].contains(self) ? 0.5 : 0.0) * screenSize.height,
-      width: ([.top, .bottom].contains(self) ? 1.0 : 0.5) * screenSize.width,
-      height: ([.left, .right].contains(self) ? 1.0 : 0.5) * screenSize.height
+      width: ([.top, .bottom, .fullscreen].contains(self) ? 1.0 : 0.5) * screenSize.width,
+      height: ([.left, .right, .fullscreen].contains(self) ? 1.0 : 0.5) * screenSize.height
     )
   }
 
@@ -42,6 +43,8 @@ extension CollagePosition {
     let result: [[CollagePosition]]
 
     switch numberOfImages {
+    case 1:
+      result = [[.fullscreen]]
     case 2:
       result = [
         [.top, .bottom],
