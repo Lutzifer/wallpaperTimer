@@ -19,7 +19,7 @@ struct Collage {
       NSGraphicsContext.current = NSGraphicsContext(bitmapImageRep: bitmap)
 
       let positions = CollagePosition.allCombinations(for: inputPaths.count)
-      let positionSet = positions[Int.random(withMaximum: (positions.count - 1))]
+      let positionSet = positions[Int.random(withMaximum: (positions.count))]
 
       for (inputPath, position) in zip(inputPaths, positionSet) {
         drawImage(at: inputPath, at: position, with: screenSize)
@@ -31,8 +31,6 @@ struct Collage {
   }
 
   private func bitmap(for screensize: CGSize) -> NSBitmapImageRep? {
-    let screenSize = CGSize(width: 1024, height: 768)
-
     return NSBitmapImageRep(
       bitmapDataPlanes: nil,
       pixelsWide: Int(screenSize.width),
