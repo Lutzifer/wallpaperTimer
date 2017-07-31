@@ -24,6 +24,7 @@ struct WallpaperManager {
 
       let wallpaperURLsToSet = eligibleGroups[Int.random(withMaximum: eligibleGroups.count)]
         .wallpaperURLs
+        .shuffled()
 
       let collagePath = FileManager.default.pathToTemporaryImage
 
@@ -37,6 +38,7 @@ struct WallpaperManager {
       urls = eligibleGroups
         .filter { $0.wallpaperURLs.count >= screens.count } [Int.random(withMaximum: eligibleGroups.count)]
         .wallpaperURLs
+        .shuffled()
     }
 
     for (screen, url) in zip(screens, urls) {
