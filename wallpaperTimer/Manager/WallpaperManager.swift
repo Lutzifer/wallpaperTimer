@@ -14,14 +14,16 @@ struct WallpaperManager {
 
   func setWallpapers() {
     let screens = NSScreen.screens
+    let urls: [URL]
 
     let eligibleGroups =
       groups(at: URL(fileURLWithPath: self.baseFolderPath), usingDaytime: useDaytime)
-      .filter { $0.wallpaperURLs.count >= screens.count }
-
-    var wallpaperURLsToSet = eligibleGroups[Int.random(withMaximum: eligibleGroups.count)].wallpaperURLs
 
     if screens.count == 1, let screen = screens.first {
+      // If there is only one screen, we make a collage
+
+      let wallpaperURLsToSet = eligibleGroups[Int.random(withMaximum: eligibleGroups.count)]
+        .wallpaperURLs
 
       let collagePath = FileManager.default.pathToTemporaryImage
 
@@ -30,15 +32,15 @@ struct WallpaperManager {
           at: wallpaperURLsToSet.map { $0.path },
           to: collagePath
         )
-
-      screen.setDesktopImage(at: URL(fileURLWithPath: collagePath))
-      return
+      urls = [URL(fileURLWithPath: collagePath)]
+    } else {
+      urls = eligibleGroups
+        .filter { $0.wallpaperURLs.count >= screens.count } [Int.random(withMaximum: eligibleGroups.count)]
+        .wallpaperURLs
     }
 
-    screens.forEach {
-      let index = Int.random(withMaximum: wallpaperURLsToSet.count)
-      $0.setDesktopImage(at: wallpaperURLsToSet[index])
-      wallpaperURLsToSet.remove(at: index)
+    for (screen, url) in zip(screens, urls) {
+      screen.setDesktopImage(at: url)
     }
   }
 
