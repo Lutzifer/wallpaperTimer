@@ -22,14 +22,8 @@ struct WallpaperManager {
     var wallpaperURLsToSet = eligibleGroups[Int.random(withMaximum: eligibleGroups.count)].wallpaperURLs
 
     if screens.count == 1, let screen = screens.first {
-      let cachePath = FileManager.cachesDir().appending("/WallpaperTimer")
-      try? _ = FileManager.default.createDirectory(
-        atPath: cachePath,
-        withIntermediateDirectories: true,
-        attributes: nil
-      )
 
-      let collagePath = cachePath.appending("/\(UUID().uuidString).jpg")
+      let collagePath = FileManager.default.pathToTemporaryImage
 
       Collage(screenSize: screen.visibleFrame.size)
         .writeImages(

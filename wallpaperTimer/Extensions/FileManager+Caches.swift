@@ -14,4 +14,16 @@ extension FileManager {
     var paths = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true) as [String]
     return paths[0]
   }
+
+  var pathToTemporaryImage: String {
+    let cachePath = FileManager.cachesDir().appending("/WallpaperTimer")
+
+    try? _ = createDirectory(
+      atPath: cachePath,
+      withIntermediateDirectories: true,
+      attributes: nil
+    )
+
+    return cachePath.appending("/\(UUID().uuidString).jpg")
+  }
 }
