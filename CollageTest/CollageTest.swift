@@ -20,6 +20,14 @@ class CollageTest: XCTestCase {
     super.tearDown()
   }
 
+  func testCollagePositions() {
+    assert(CollagePosition.allCombinations(for: 0).count == 0)
+    assert(CollagePosition.allCombinations(for: 1).count == 0)
+    assert(CollagePosition.allCombinations(for: 2).count == 2)
+    assert(CollagePosition.allCombinations(for: 3).count == 6)
+    assert(CollagePosition.allCombinations(for: 4).count == 7)
+  }
+
   func testCollage() {
     //    CollagePosition.allValues.forEach {
     //      Collage().writeImages(
