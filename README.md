@@ -28,7 +28,7 @@ brew install wallpapertimer
 ```
 Usage: wallpapertimer [options]
   -s, --sourcepath:
-      Path to the Folder which contains the Folders ''morning' (begins at 6 ó clock), 'noon' (begins at 11 ó clock), 'afternoon' (begins at 13 ó clock), 'evening' (begins at 17 ó clock), 'night' (begins at 22 ó clock) and 'all' (used if other folder is empty or -d flag not given).
+      Path to the Folder which contains the Folders 'morning' (begins at 6 ó clock), 'noon' (begins at 11 ó clock), 'afternoon' (begins at 13 ó clock), 'evening' (begins at 17 ó clock), 'night' (begins at 22 ó clock) and 'all' (used if other folder is empty or -d flag not given).
   -h, --help:      
       Prints a help message.
   -d, --daytime:   
